@@ -48,7 +48,10 @@ const CartItem = ({ onContinueShopping }) => {
     return subtotal;
   };
   const calculateTotalQuantity = () =>{
-    return CartItem? CartItem.reduce((total,item) => total + item.quantity,0):0;
+    return cart? cart.reduce((total,item) => total + item.quantity,0):0;
+    };
+    const calculateTotalNumberItem = () =>{
+        return cart? cart.length : 0;
     };
 
   return (
@@ -73,7 +76,7 @@ const CartItem = ({ onContinueShopping }) => {
         ))}
       </div>
       <div style={{ marginTop: '20px', color: 'black' }} className='total_cart_amount'>
-        <h2>Total items number : {cart.length}</h2>
+        <h2>Total items number : {calculateTotalNumberItem()}</h2>
         <h2>Total cart quantity : {calculateTotalQuantity()}</h2>
         <h2>Total cart amount : ${calculateTotalAmount()}</h2>
       </div>
