@@ -253,6 +253,7 @@ function ProductList({ onHomeClick }) {
         setShowCart(false);
     };
     const [addedToCart,setAddedToCart] = useState({});
+
     const handleAddToCart = (product) => {
         dispatch(addItem(product));
         setAddedToCart((prevState) => ({
@@ -263,7 +264,7 @@ function ProductList({ onHomeClick }) {
     const calculateTotalQuantity = () =>{
         return CartItem? CartItem.reduce((total,item) => total + item.quantity,0):0;
     };
-    dispatch(addItem(product))
+    dispatch(addItem(product));
     return (
         <div>
             <div className="navbar" style={styleObj}>
@@ -299,7 +300,7 @@ function ProductList({ onHomeClick }) {
                                         <div className="product-description">{plant.description}</div>
                                         <div className="product-cost">${plant.cost}</div>
                                         <button className="product-button" onClick={() => handleAddToCart(plant)}>
-                                            Add to Cart
+                                            {addedToCart[product.name]? 'Added' : 'Add to Cart'}
                                         </button>
                                     </div>
                                 ))}
