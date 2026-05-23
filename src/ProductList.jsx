@@ -264,9 +264,7 @@ function ProductList({ onHomeClick }) {
             [product.name]:true,
         }));
     };
-    const calculateTotalQuantity = () =>{
-        return CartItem? CartItem.reduce((total,item) => total + item.quantity,0):0;
-    };
+    
     return (
         <div>
             <div className="navbar" style={styleObj}>
