@@ -74,7 +74,7 @@ const CartItem = ({ onContinueShopping }) => {
       </div>
       <div style={{ marginTop: '20px', color: 'black' }} className='total_cart_amount'>
         <h2>Total items number : {cart.length}</h2>
-        <h2>Total cart quantity : {calculateTotalQuantity</h2>
+        <h2>Total cart quantity : {calculateTotalQuantity()}</h2>
         <h2>Total cart amount : ${calculateTotalAmount()}</h2>
       </div>
       <div className="continue_shopping_btn">
